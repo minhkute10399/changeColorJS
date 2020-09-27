@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./color.js">
+</head>
+<body>
+	
+	<div class="menu-color">
+		<ul class="list-menu">
+			<li class="theme-color">Color Flipper</li>
+			<div class="button-link">
+				<li><a href="#">Simple</a></li>
+			</div>
+		</ul>
+	</div>
+	<main>
+		<div class="container">
+			<h2>background color : <span class="color">#f1f5f8</span></h2>
+			<button class="btn btn-hero" id="btn">click me</button>
+		</div>
+	</main>
+	<script>
+		const color = ["green", "red", "rgba(133,122,200)", "#f15025", "purple", "blue", "yellow", "grey"];
+		const btn = document.getElementById('btn');
+		const query = document.querySelector(".color");
+  
+        btn.addEventListener("click", function(){
+           const randomNumber = getNumberTheColor();
+           document.body.style.backgroundColor = color[randomNumber];
+           query.textContent = color[randomNumber];
+        });
+
+		function getNumberTheColor() {
+			return Math.floor(Math.random() * color.length);
+		}
+	</script>
+</body>
+</html>
